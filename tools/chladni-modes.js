@@ -40,7 +40,7 @@ const out = `/* The modes of a square plate with free edges (Poisson's ratio ${N
  */
 (function (root) {
 	const MODES = ${JSON.stringify(figures)};
-	root.ChaosChladniModes = MODES;
+	root.ChladniModes = MODES;
 	if (typeof module !== "undefined") module.exports = MODES;
 })(typeof window !== "undefined" ? window : globalThis);
 `;

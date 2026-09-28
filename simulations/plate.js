@@ -212,6 +212,6 @@
 	}
 
 	const Plate = { beamRoots, beamModes, beamIntegrals, gaussLegendre, quadrature, jacobi, solveClass, solve, beamTable, grid };
-	root.ChaosPlate = Plate;
+	root.ChladniPlate = Plate;
 	if (typeof module !== "undefined") module.exports = Plate;
 })(typeof window !== "undefined" ? window : globalThis);

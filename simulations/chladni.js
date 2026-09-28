@@ -1,4 +1,4 @@
-/* Not chaos: Chladni figures. Sand on a square plate with free edges, vibrating in one of its
+/* Chladni figures. Sand on a square plate with free edges, vibrating in one of its
  * modes (plate.js, data/chladni-modes.js). Where the plate moves, its acceleration throws the
  * grains up and they land a little way off; where it hardly moves, along the nodal lines, it
  * can't lift them. So the sand wanders off the moving parts and comes to rest on the still ones,
@@ -15,8 +15,8 @@
  * that is most of it; once the sand has settled the plate falls silent and the sim rests.
  */
 (function (root) {
-	const Plate = root.ChaosPlate || require("./plate.js");
-	const MODES = root.ChaosChladniModes || require("../data/chladni-modes.js");
+	const Plate = root.ChladniPlate || require("./plate.js");
+	const MODES = root.ChladniModes || require("../data/chladni-modes.js");
 
 	// every figure, by frequency: a mode, or one of a pair's two combinations
 	const FIGURES = MODES.flatMap((mode) => (mode.swaps ? mode.swaps.map((swap) => ({ mode, swap })) : [{ mode, swap: 0 }]))
@@ -265,7 +265,7 @@
 				equations: [
 					"D ∇⁴w = ρh ω² w, &nbsp; D = <span class=\"frac\"><span>E h³</span><span>12 (1 − ν²)</span></span>",
 					`λ = ω a² √(ρh / D) = ${mode.lambda.toFixed(2)}: &nbsp;on a 20 cm steel plate 1 mm thick, ${f.toFixed(0)} Hz, ${note(f)}`,
-					`<span class="chaos-note">${this.story}</span>`
+					`<span class="chladni-note">${this.story}</span>`
 				]
 			};
 		}
@@ -287,7 +287,7 @@
 	Chladni.THRESHOLD = THRESHOLD;
 	Chladni.info = { title: "Chladni figures", equations: [] };
 
-	root.ChaosSimulations = root.ChaosSimulations || {};
-	root.ChaosSimulations.chladni = Chladni;
+	root.ChladniSimulations = root.ChladniSimulations || {};
+	root.ChladniSimulations.chladni = Chladni;
 	if (typeof module !== "undefined") module.exports = { Chladni };
 })(typeof window !== "undefined" ? window : globalThis);
