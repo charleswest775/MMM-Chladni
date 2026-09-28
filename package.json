@@ -1,7 +1,7 @@
 {
   "name": "mmm-chladni",
   "version": "1.0.0",
-  "description": "MagicMirror² module: animated chladni-theory simulations (Lorenz attractor, diverging pendulums, fractal basins, logistic map, symmetric icons, the three-body problem, chaotic billiards, rule 30), and pages of physics and mathematics: a Bohr-style atom and hydrogen's orbitals, a fractal zoom, sacred geometry, the planets' dance, Chladni figures, aperiodic and hyperbolic tilings, snow crystals, and tonight's sky.",
+  "description": "MagicMirror² module: Chladni figures, sand on a vibrating square plate gathering on its nodal lines, with the plate's modes solved by Ritz's method and drawn for a Raspberry Pi without a GPU.",
   "main": "MMM-Chladni.js",
   "scripts": {
     "test": "node --test"
